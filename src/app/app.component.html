@@ -1,0 +1,60 @@
+<input #searchBox class="pdbeAutoCompleteSearchBox" (keyup)="search(searchBox.value)" [(ngModel)]="searchInputVal" />
+ 
+<div class="result-container" 
+  [fxShow]="resultPanelOpen"
+  [ngStyle]="resultPanelHeight()" 
+
+>
+  <div fxLayout="row" fxLayout="row" fxLayoutWrap="wrap" [fxLayoutAlign]="layoutAlign">
+    <div class="result-card" fxLayout="column" *ngFor="let resultGroup of resultGroups" [fxShow]="primaryResultPanel">
+        <div class="result-card-heading">{{resultGroup.groupValue}}
+          <span class="result-card-item-count-heading">({{resultGroup.doclist.numFound}})</span>
+        </div>
+        <div class="result-card-body">
+          <a 
+            class="result-card-item" 
+            fxLayout="row" 
+            fxLayoutAlign="space-between center"
+            *ngFor="let doclistRec of resultGroup.doclist.docs | slice:0:10"
+            title="{{doclistRec.value}}"
+            (click)="resultItemClick(doclistRec)" 
+            [href]="resultItemLink(doclistRec)"
+          >
+            <div class="result-card-item-label">{{doclistRec.value}}</div>
+            <div class="result-card-item-count">({{doclistRec.num_pdb_entries}})</div>
+          </a>
+        </div>
+        <div class="result-card-footer" [hidden]="resultGroup.doclist.docs.length < 11">
+          <a href="#" class="show-more-link" (click)="searchMore(searchBox.value, resultGroup.doclist.docs[0].var_name);">More...</a>
+        </div>
+    </div>
+
+    
+    <div class="secondary-result-card-warpper" fxLayout="column" *ngFor="let moreResultGroup of moreResultGroups" style="overflow-y: auto;width:100%" [fxShow]="secondaryResultPanel">
+        <div class="result-card-heading" fxFlex="100%" style="box-sizing: content-box;">
+          {{moreResultGroup.groupValue}}  ({{moreResultGroup.doclist.numFound}}) <a href="#" class="result-card-item-count-heading" (click)="showLess()">Less...</a></div>
+        <div class="result-card-body" fxFlex="100%" fxLayout="row" fxLayoutWrap="wrap">
+          <div *ngFor="let item of getLoopCount(moreResultGroup.doclist.numFound); let cardIndex = index; ">
+
+              <a class="secondar-result-card-item" 
+                fxLayout="row" 
+                *ngFor="let moreDoclistRec of moreResultGroup.doclist.docs | slice: (cardIndex * 10):((cardIndex * 10) + 10)"
+                title="{{moreDoclistRec.value}}" 
+                (click)="resultItemClick(moreDoclistRec)" 
+                [href]="resultItemLink(moreDoclistRec)" 
+              >
+                <div class="result-card-item-label">{{moreDoclistRec.value}}</div>
+                <div class="result-card-item-count">({{moreDoclistRec.num_pdb_entries}})</div>
+              </a>
+          
+          </div>
+        </div>
+        <div class="result-card-footer">
+          <a href="#" class="show-more-link" (click)="showLess()">Less...</a>
+        </div>
+    </div>
+
+    <div class="norecords-result-card" *ngIf="(resultGroups)?.length == 0">{{processMessage}}</div>
+  </div>
+
+</div>
