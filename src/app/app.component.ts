@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, ElementRef, Output, EventEmitter, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Observable }        from 'rxjs/Observable';
 import { Subject }           from 'rxjs/Subject';
@@ -16,6 +16,8 @@ import { WindowRefService } from './window-ref.service';
   }
 })
 export class PdbAutocompleteComponent implements OnInit {
+
+  @Input() config: any;
 
   @Output()
   itemSelected:EventEmitter<string> = new EventEmitter();
@@ -48,7 +50,7 @@ export class PdbAutocompleteComponent implements OnInit {
     //Extend Config Object
     let userConfig = windowRef.nativeWindow.PdbeAutocompleteSearchConfig;
 
-    if(typeof userConfig != 'undefined') this.defaultConfig = this.extend([this.defaultConfig, userConfig,]);
+    if(typeof userConfig != 'undefined') this.defaultConfig = this.extend([this.defaultConfig, userConfig]);
 
     //Create custom event
     this.events = this.createNewEvent(['PDBe.autocomplete.click']);
@@ -203,6 +205,17 @@ export class PdbAutocompleteComponent implements OnInit {
   }
 
   /**
+   * Method to toggle page scroll
+   * @public
+   * @param {strings} hide/show
+   * @returns void
+   */
+  togglePageScroll(action): void{
+    this.el.nativeElement.ownerDocument.body.style.overflow = 'auto';
+    if(action == 'hide') this.el.nativeElement.ownerDocument.body.style.overflow = 'hidden';
+  }
+
+  /**
    * Method to hide all result panel sections.
    * @public
    * @returns {boolean} false - to avoid redirection
@@ -211,6 +224,8 @@ export class PdbAutocompleteComponent implements OnInit {
     this.resultPanelOpen = false;
     this.primaryResultPanel = false;
     this.secondaryResultPanel = false;
+    //show page scroll
+    this.togglePageScroll('show');
   }
 
   /**
@@ -221,6 +236,8 @@ export class PdbAutocompleteComponent implements OnInit {
   showSecondayPanel(): void{
     this.primaryResultPanel = false;
     this.secondaryResultPanel = true;
+    //hide page scroll
+    this.togglePageScroll('hide');
   }
 
   /**
@@ -232,6 +249,8 @@ export class PdbAutocompleteComponent implements OnInit {
     this.resultPanelOpen = true;
     this.primaryResultPanel = true;
     this.secondaryResultPanel = false;
+    //hide page scroll
+    this.togglePageScroll('hide');
   }
 
   /**
@@ -335,7 +354,9 @@ export class PdbAutocompleteComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+
+    if(typeof this.config != 'undefined') this.defaultConfig = this.extend([this.defaultConfig, this.config]);
+
     this.searchTermStream
     .debounceTime(300)        // wait for 300ms pause in events
     .distinctUntilChanged()   // ignore if next search term is same as previous

@@ -1,16 +1,58 @@
 {
-  "name": "pdb-search-autocomplete",
-  "version": "0.0.0",
-  "license": "Apache-2.0",
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+  "_args": [
+    [
+      {
+        "raw": "pdb-search-autocomplete@git+https://github.com/PDBeurope/pdb-search-autocomplete.git#v0.0.0",
+        "scope": null,
+        "escapedName": "pdb-search-autocomplete",
+        "name": "pdb-search-autocomplete",
+        "rawSpec": "git+https://github.com/PDBeurope/pdb-search-autocomplete.git#v0.0.0",
+        "spec": "git+https://github.com/PDBeurope/pdb-search-autocomplete.git#v0.0.0",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:PDBeurope/pdb-search-autocomplete.git#v0.0.0",
+          "sshUrl": "git+ssh://git@github.com/PDBeurope/pdb-search-autocomplete.git#v0.0.0",
+          "httpsUrl": "git+https://github.com/PDBeurope/pdb-search-autocomplete.git#v0.0.0",
+          "gitUrl": "git://github.com/PDBeurope/pdb-search-autocomplete.git#v0.0.0",
+          "shortcut": "github:PDBeurope/pdb-search-autocomplete#v0.0.0",
+          "directUrl": "https://raw.githubusercontent.com/PDBeurope/pdb-search-autocomplete/v0.0.0/package.json"
+        }
+      },
+      "C:\\Users\\mandar\\Documents\\NetBeansProjects\\pdb-search-app\\material\\v5.0"
+    ]
+  ],
+  "_from": "git+https://github.com/PDBeurope/pdb-search-autocomplete.git#v0.0.0",
+  "_id": "pdb-search-autocomplete@0.0.0",
+  "_inCache": true,
+  "_location": "/pdb-search-autocomplete",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "pdb-search-autocomplete@git+https://github.com/PDBeurope/pdb-search-autocomplete.git#v0.0.0",
+    "scope": null,
+    "escapedName": "pdb-search-autocomplete",
+    "name": "pdb-search-autocomplete",
+    "rawSpec": "git+https://github.com/PDBeurope/pdb-search-autocomplete.git#v0.0.0",
+    "spec": "git+https://github.com/PDBeurope/pdb-search-autocomplete.git#v0.0.0",
+    "type": "hosted",
+    "hosted": {
+      "type": "github",
+      "ssh": "git@github.com:PDBeurope/pdb-search-autocomplete.git#v0.0.0",
+      "sshUrl": "git+ssh://git@github.com/PDBeurope/pdb-search-autocomplete.git#v0.0.0",
+      "httpsUrl": "git+https://github.com/PDBeurope/pdb-search-autocomplete.git#v0.0.0",
+      "gitUrl": "git://github.com/PDBeurope/pdb-search-autocomplete.git#v0.0.0",
+      "shortcut": "github:PDBeurope/pdb-search-autocomplete#v0.0.0",
+      "directUrl": "https://raw.githubusercontent.com/PDBeurope/pdb-search-autocomplete/v0.0.0/package.json"
+    }
   },
-  "private": true,
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "git+https://github.com/PDBeurope/pdb-search-autocomplete.git#d90ac17612a7b9cc9de82f77e16ec5cab58c4f02",
+  "_shasum": "01f14ef52d79186f895ef777c8d7a5ac137a2fbc",
+  "_shrinkwrap": null,
+  "_spec": "pdb-search-autocomplete@git+https://github.com/PDBeurope/pdb-search-autocomplete.git#v0.0.0",
+  "_where": "C:\\Users\\mandar\\Documents\\NetBeansProjects\\pdb-search-app\\material\\v5.0",
   "dependencies": {
     "@angular/animations": "^4.0.0",
     "@angular/common": "^4.0.0",
@@ -26,6 +68,7 @@
     "rxjs": "^5.1.0",
     "zone.js": "^0.8.4"
   },
+  "description": "This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.1.",
   "devDependencies": {
     "@angular/cli": "1.1.1",
     "@angular/compiler-cli": "^4.0.0",
@@ -38,12 +81,28 @@
     "karma": "~1.7.0",
     "karma-chrome-launcher": "~2.1.1",
     "karma-cli": "~1.0.1",
+    "karma-coverage-istanbul-reporter": "^1.2.1",
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
-    "karma-coverage-istanbul-reporter": "^1.2.1",
     "protractor": "~5.1.2",
     "ts-node": "~3.0.4",
     "tslint": "~5.3.2",
     "typescript": "~2.3.3"
-  }
+  },
+  "gitHead": "d90ac17612a7b9cc9de82f77e16ec5cab58c4f02",
+  "license": "Apache-2.0",
+  "name": "pdb-search-autocomplete",
+  "optionalDependencies": {},
+  "private": true,
+  "readme": "# PDB Search Autocomplete\r\n\r\nThis project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.1.\r\n\r\n## Setup project\r\n\r\nClone the Git Repository and run `npm install`. To run the Development server or Build refer the steps provided below.\r\n\r\n## Development server\r\n\r\nRun `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.\r\n\r\n## Code scaffolding\r\n\r\nRun `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.\r\n\r\n## Build\r\n\r\nRun `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.\r\n\r\n## Running unit tests\r\n\r\nRun `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).\r\n\r\n## Running end-to-end tests\r\n\r\nRun `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).\r\nBefore running the tests make sure you are serving the app via `ng serve`.\r\n\r\n## License\r\nThe code is released under the Apache License Version 2.0. You can find out more about it at http://www.apache.org/licenses/LICENSE-2.0 or within the license file of the repository.\r\n",
+  "readmeFilename": "README.md",
+  "scripts": {
+    "build": "ng build",
+    "e2e": "ng e2e",
+    "lint": "ng lint",
+    "ng": "ng",
+    "start": "ng serve",
+    "test": "ng test"
+  },
+  "version": "0.0.0"
 }

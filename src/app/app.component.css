@@ -1,3 +1,16 @@
+a *,
+a *:before,
+a *:after {
+    -webkit-box-sizing: content-box !important;
+    -moz-box-sizing: content-box !important;
+    box-sizing: content-box !important;
+}
+
+.pdbeAutoCompleteSearchBox{
+  width:100%;
+  padding:7px;
+  font-size: 12px
+}
 .result-container{
   font-family: 'helvetica neue', arial, sans-serif;
   width: auto;
@@ -15,7 +28,7 @@
 .result-card{
   margin: 5px;
   padding: 5px;
-  border: solid 1px rgba(115, 179, 96, 5);
+  border: solid 1px rgba(115, 179, 96, 5) !important;;
   width:250px;
   max-height: 370px;
   overflow: hidden;
@@ -25,13 +38,13 @@
 .secondary-result-card-warpper{
   margin: 5px;
   padding: 5px;
-  border: solid 1px rgba(115, 179, 96, 5);
+  border: solid 1px rgba(115, 179, 96, 5) !important;;
   box-sizing: content-box !important;
 }
 
 .result-card-heading{
     box-sizing: content-box !important;
-    border: 1px solid rgb(115, 179, 96);
+    border: 1px solid rgb(115, 179, 96) !important;;
     background: rgba(115, 179, 96, 1);
     color: #fff;
     height:20px;
@@ -67,28 +80,28 @@
     width:250px;
     font-size: 11.5px;
     margin:5px;
-    border: solid 1px rgba(115, 179, 96, 5);
+    border: solid 1px rgba(115, 179, 96, 5) !important;;
     cursor: pointer;
-    text-decoration: none;
-    color: #232323;
+    text-decoration: none !important;;
+    color: #232323 !important;;
 }
 
 .secondar-result-card-item:hover{
-   text-decoration: none;
-   background: rgba(115, 179, 96, 0.2);
+   text-decoration: none !important;;
+   background: rgba(115, 179, 96, 0.2) !important;;
 }
 
 .result-card-item, .result-card-item:visited{
     font-size: 11.5px;
-    border-bottom: 1px dotted #999;
+    border-bottom: 1px dotted #999 !important;
     cursor: pointer;
-    text-decoration: none;
-    color: #232323;
+    text-decoration: none !important;;
+    color: #232323 !important;
 }
 
 .result-card-item:hover{
-   text-decoration: none;
-   background: rgba(115, 179, 96, 0.2);
+   text-decoration: none !important;;
+   background: rgba(115, 179, 96, 0.2) !important;
 }
 
 .result-card-item:last-child{
@@ -96,7 +109,7 @@
 }
 
 .result-card-item:first-child{
-    margin-top:5px;
+    margin-top:5px !important;;
 }
 
 .result-card-item-label{
@@ -120,13 +133,13 @@
 }
 
 .show-more-link, .show-more-link:visited{
-    text-decoration: none;
-    color:#000;
+    text-decoration: none !important;;
+    color:#000 !important;;
 }
 
 .show-more-link:hover{
-   text-decoration: none;
-   color: rgba(115, 179, 96, 1);
+   text-decoration: none !important;;
+   color: rgba(115, 179, 96, 1) !important;;
 }
 
 .result-card-item-count-heading{
@@ -139,8 +152,9 @@ a.result-card-item-count-heading, a.result-card-item-count-heading:hover,
 a.result-card-item-count-heading:active, a.result-card-item-count-heading:visited {
     color: #fff;
     cursor: pointer;
-    text-decoration: none;
+    text-decoration: none!important;
     font-size: 14px;
+    border-bottom: none !important;
 }
 
 .norecords-result-card{
@@ -153,8 +167,4 @@ a.result-card-item-count-heading:active, a.result-card-item-count-heading:visite
 
 .scrollbar-element{
     max-height:inherit;
-}
-
-.ps-container:hover>.ps-scrollbar-x-rail, .ps-container:hover>.ps-scrollbar-y-rail {
-    opacity: 1 !important;
 }
