@@ -43,8 +43,8 @@ export class PdbAutocompleteComponent implements OnInit {
   processMessage = 'Loading..'
   resultGroups: any[];
   moreResultGroups: any[];
-  private searchTermStream = new Subject<string>();
-  private events: any;
+  searchTermStream = new Subject<string>();
+  events: any;
 
   constructor(private pdbSolrService: SolrAutocompleteService, private el:ElementRef, private windowRef: WindowRefService) {
     //Extend Config Object
@@ -63,7 +63,7 @@ export class PdbAutocompleteComponent implements OnInit {
    * @param {Array} Custom event names Array.
    * @returns {Object} Custom event object.
    */
-  private createNewEvent (eventTypeArr){
+  createNewEvent (eventTypeArr){
 		var eventObj = {};
 		for(var ei=0, elen = eventTypeArr.length; ei < elen; ei++){
 			var event; 
@@ -92,7 +92,7 @@ export class PdbAutocompleteComponent implements OnInit {
    * @param {object} Data to be dispacted in the 'eventData' field.
    * @returns {void}
    */
-  private dispatchEvent(eventType, eventData): void {
+  dispatchEvent(eventType, eventData): void {
       var dispatchEventElement = this.el.nativeElement;
       
       if(typeof eventData !== 'undefined'){
@@ -109,7 +109,7 @@ export class PdbAutocompleteComponent implements OnInit {
    * For a deep extend, set the first argument to `true`.
    * @returns {object} returns merged / extended object
    */
-  private extend(argArr: any[]) {
+  extend(argArr: any[]) {
 
     // Variables
     let extended = {}, deep = false,i = 0, length = argArr.length;
@@ -173,7 +173,7 @@ export class PdbAutocompleteComponent implements OnInit {
    * @param {strings} search term.
    * @returns void
    */
-  private search(term: string): void {
+  search(term: string): void {
     this.searchTermStream.next(term);
   }
 
@@ -183,7 +183,7 @@ export class PdbAutocompleteComponent implements OnInit {
    * @param {strings} search term.
    * @returns {boolean} false - to avoid redirection
    */
-  private searchMore(moreTerm: string, filterVal: string): boolean {
+  searchMore(moreTerm: string, filterVal: string): boolean {
     this.pdbSolrService.searchMore(moreTerm, filterVal, this.defaultConfig).then(res => {
       this.moreResultGroups = res;
       this.showSecondayPanel();
@@ -261,7 +261,7 @@ export class PdbAutocompleteComponent implements OnInit {
    * @param {String|Number} value The value.
    * @returns {String} The escaped value.
    */
-   private escapeValue (value): string {
+   escapeValue (value): string {
     // If the field value has a space, colon, quotation mark or forward slash
     // in it, wrap it in quotes, unless it is a range query or it is already 
     // wrapped in quotes.
@@ -323,7 +323,7 @@ export class PdbAutocompleteComponent implements OnInit {
    * @param {number}: number of result items
    * @returns {array} array of number of items to be clubbed
    */
-  private getLoopCount(totalRecs: number): number[]{
+  getLoopCount(totalRecs: number): number[]{
     let loopCount = new Array(Math.ceil((totalRecs/10)));
     return loopCount;
   }
@@ -333,7 +333,7 @@ export class PdbAutocompleteComponent implements OnInit {
    * @private
    * @returns {object} object with css style settings
    */
-  private resultPanelHeight() {
+  resultPanelHeight() {
     let panelAlign: string;
     this.defaultConfig.resultBoxAlign == 'right' ? panelAlign = 'right' : panelAlign = 'left';
     let searchBoxDimension = this.el.nativeElement.querySelector('.pdbeAutoCompleteSearchBox').getBoundingClientRect();

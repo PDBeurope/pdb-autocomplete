@@ -21,7 +21,10 @@ import { PdbAutocompleteComponent } from './app.component';
     HttpModule,
     FlexLayoutModule
   ],
+  exports: [
+    PdbAutocompleteComponent
+  ],
   providers: [WindowRefService],
   bootstrap: [PdbAutocompleteComponent]
 })
-export class AppModule { }
+export class PDBSearchAutocompleteModule { }

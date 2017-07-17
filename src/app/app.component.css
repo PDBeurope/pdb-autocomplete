@@ -8,7 +8,8 @@ a *:after {
 
 .pdbeAutoCompleteSearchBox{
   width:100%;
-  padding:7px;
+  height: 32px;
+  line-height: 32px;
   font-size: 12px
 }
 .result-container{
