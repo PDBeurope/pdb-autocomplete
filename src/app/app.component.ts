@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, ElementRef, Output, EventEmitter, Input, ChangeDetectorRef } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Observable }        from 'rxjs/Observable';
 import { Subject }           from 'rxjs/Subject';
@@ -22,6 +22,10 @@ export class PdbAutocompleteComponent implements OnInit {
   @Output()
   itemSelected:EventEmitter<string> = new EventEmitter();
 
+  @Input() searchInputVal: any
+  @Output()
+  searchInputValChange = new EventEmitter<any>();
+
   //Default Configurations
   defaultConfig: any = {
     resultBoxAlign: 'left',
@@ -34,7 +38,7 @@ export class PdbAutocompleteComponent implements OnInit {
     additionalParams: 'rows=20000&json.nl=map&wt=json'
   }
 
-  searchInputVal: string;
+  // searchInputVal: string;
   resultPanelStyle = {'max-height': '100%'};
   layoutAlign = 'start start';
   resultPanelOpen = false;
@@ -46,7 +50,7 @@ export class PdbAutocompleteComponent implements OnInit {
   searchTermStream = new Subject<string>();
   events: any;
 
-  constructor(private pdbSolrService: SolrAutocompleteService, private el:ElementRef, private windowRef: WindowRefService) {
+  constructor(private pdbSolrService: SolrAutocompleteService, private changeDetectorRef:ChangeDetectorRef, private el:ElementRef, private windowRef: WindowRefService) {
     //Extend Config Object
     let userConfig = windowRef.nativeWindow.PdbeAutocompleteSearchConfig;
 
@@ -174,6 +178,8 @@ export class PdbAutocompleteComponent implements OnInit {
    * @returns void
    */
   search(term: string): void {
+    this.searchInputValChange.emit(term);
+    this.changeDetectorRef.detectChanges();
     this.searchTermStream.next(term);
   }
 
@@ -287,6 +293,7 @@ export class PdbAutocompleteComponent implements OnInit {
    */
   public resultItemClick(resultRecord): boolean {
     this.searchInputVal = '';
+    this.searchTermStream.next('');
 
     this.hideAllPanels();
 

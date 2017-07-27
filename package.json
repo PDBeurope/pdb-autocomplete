@@ -20,39 +20,60 @@
         }
       },
       "C:\\Users\\mandar\\Documents\\NetBeansProjects\\pdb-search-app\\material\\v5.0"
+    ],
+    [
+      {
+        "raw": "pdb-search-autocomplete@git+https://github.com/PDBeurope/pdb-search-autocomplete.git",
+        "scope": null,
+        "escapedName": "pdb-search-autocomplete",
+        "name": "pdb-search-autocomplete",
+        "rawSpec": "git+https://github.com/PDBeurope/pdb-search-autocomplete.git",
+        "spec": "git+https://github.com/PDBeurope/pdb-search-autocomplete.git",
+        "type": "hosted",
+        "hosted": {
+          "type": "github",
+          "ssh": "git@github.com:PDBeurope/pdb-search-autocomplete.git",
+          "sshUrl": "git+ssh://git@github.com/PDBeurope/pdb-search-autocomplete.git",
+          "httpsUrl": "git+https://github.com/PDBeurope/pdb-search-autocomplete.git",
+          "gitUrl": "git://github.com/PDBeurope/pdb-search-autocomplete.git",
+          "shortcut": "github:PDBeurope/pdb-search-autocomplete",
+          "directUrl": "https://raw.githubusercontent.com/PDBeurope/pdb-search-autocomplete/master/package.json"
+        }
+      },
+      "/Users/mandardeshpande/Documents/search-11-7"
     ]
   ],
-  "_from": "git+https://github.com/PDBeurope/pdb-search-autocomplete.git#v0.0.0",
+  "_from": "git+https://github.com/PDBeurope/pdb-search-autocomplete.git",
   "_id": "pdb-search-autocomplete@0.0.0",
   "_inCache": true,
   "_location": "/pdb-search-autocomplete",
   "_phantomChildren": {},
   "_requested": {
-    "raw": "pdb-search-autocomplete@git+https://github.com/PDBeurope/pdb-search-autocomplete.git#v0.0.0",
+    "raw": "pdb-search-autocomplete@git+https://github.com/PDBeurope/pdb-search-autocomplete.git",
     "scope": null,
     "escapedName": "pdb-search-autocomplete",
     "name": "pdb-search-autocomplete",
-    "rawSpec": "git+https://github.com/PDBeurope/pdb-search-autocomplete.git#v0.0.0",
-    "spec": "git+https://github.com/PDBeurope/pdb-search-autocomplete.git#v0.0.0",
+    "rawSpec": "git+https://github.com/PDBeurope/pdb-search-autocomplete.git",
+    "spec": "git+https://github.com/PDBeurope/pdb-search-autocomplete.git",
     "type": "hosted",
     "hosted": {
       "type": "github",
-      "ssh": "git@github.com:PDBeurope/pdb-search-autocomplete.git#v0.0.0",
-      "sshUrl": "git+ssh://git@github.com/PDBeurope/pdb-search-autocomplete.git#v0.0.0",
-      "httpsUrl": "git+https://github.com/PDBeurope/pdb-search-autocomplete.git#v0.0.0",
-      "gitUrl": "git://github.com/PDBeurope/pdb-search-autocomplete.git#v0.0.0",
-      "shortcut": "github:PDBeurope/pdb-search-autocomplete#v0.0.0",
-      "directUrl": "https://raw.githubusercontent.com/PDBeurope/pdb-search-autocomplete/v0.0.0/package.json"
+      "ssh": "git@github.com:PDBeurope/pdb-search-autocomplete.git",
+      "sshUrl": "git+ssh://git@github.com/PDBeurope/pdb-search-autocomplete.git",
+      "httpsUrl": "git+https://github.com/PDBeurope/pdb-search-autocomplete.git",
+      "gitUrl": "git://github.com/PDBeurope/pdb-search-autocomplete.git",
+      "shortcut": "github:PDBeurope/pdb-search-autocomplete",
+      "directUrl": "https://raw.githubusercontent.com/PDBeurope/pdb-search-autocomplete/master/package.json"
     }
   },
   "_requiredBy": [
     "/"
   ],
-  "_resolved": "git+https://github.com/PDBeurope/pdb-search-autocomplete.git#d90ac17612a7b9cc9de82f77e16ec5cab58c4f02",
-  "_shasum": "01f14ef52d79186f895ef777c8d7a5ac137a2fbc",
+  "_resolved": "git+https://github.com/PDBeurope/pdb-search-autocomplete.git#43650410821ea7f428ac8c8d9093ed3f29666ccf",
+  "_shasum": "bdd820457ebd9cbfa0d234d851a29a07f99e3635",
   "_shrinkwrap": null,
-  "_spec": "pdb-search-autocomplete@git+https://github.com/PDBeurope/pdb-search-autocomplete.git#v0.0.0",
-  "_where": "C:\\Users\\mandar\\Documents\\NetBeansProjects\\pdb-search-app\\material\\v5.0",
+  "_spec": "pdb-search-autocomplete@git+https://github.com/PDBeurope/pdb-search-autocomplete.git",
+  "_where": "/Users/mandardeshpande/Documents/search-11-7",
   "dependencies": {
     "@angular/animations": "^4.0.0",
     "@angular/common": "^4.0.0",
